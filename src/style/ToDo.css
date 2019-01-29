@@ -1,0 +1,16 @@
+.todo {
+    display: flex;
+    align-items: baseline;
+}
+
+.yellow {
+    background-color: yellow;
+}
+
+.lightred {
+    background-color: pink;
+}
+
+.red {
+    background-color: red;
+}
