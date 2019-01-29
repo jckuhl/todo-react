@@ -1,6 +1,15 @@
 .todo {
-    display: flex;
-    align-items: baseline;
+    display: grid;
+    grid-template-columns: 50px 1fr 50px;
+    align-items: center;
+    justify-content: center;
+    border-top: 1px solid grey;
+    font-family: 'Gochi Hand', cursive;
+}
+
+.todo input[type="checkbox"] {
+    font-size: 2rem;
+    margin: 0 auto;
 }
 
 .yellow {
@@ -13,4 +22,15 @@
 
 .red {
     background-color: red;
+}
+
+.green {
+    background-color: green;
+}
+
+.close {
+    cursor: pointer;
+    border: none;
+    background: none;
+    font-size: 1rem;
 }

@@ -15,10 +15,23 @@ class App extends Component {
     }
 
     addTodo(todo) {
-        console.log(todo);
         this.setState((state)=> {
             return state.todos.unshift(todo);
         })
+    }
+
+    removeTodo(id) {
+        id = id.toString();
+        const todos = this.state.todos.filter(todo => todo.id !== id)
+        this.setState({ todos });
+    }
+
+    displayToDoList() {
+        if(this.state.todos.length) {
+            return <ToDoList todos={this.state.todos} removeTodo={this.removeTodo.bind(this)}/>
+        } else {
+            return <h3>Add A New Task!</h3>
+        }
     }
 
     render() {
@@ -26,7 +39,7 @@ class App extends Component {
             <div className="app" >
                 <Header/>
                 <NewTodo addTodo={this.addTodo.bind(this)} ids={this.state.todos.map(todo => todo.id)}/>
-                <ToDoList todos={this.state.todos}/>
+                {this.displayToDoList()}
             </div>
         );
     }
