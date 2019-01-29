@@ -7,11 +7,7 @@ import Todo from './models/todo';
 
 class App extends Component {
     state = {
-        todos: [
-            new Todo('Feed Dog', 3, '1'),
-            new Todo('Water plants', 2, '2'),
-            new Todo('Bath Grandma', 1, '3')
-        ]
+        todos: []
     }
 
     addTodo(todo) {

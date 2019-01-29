@@ -1,3 +1,40 @@
 form {
     font-family: 'Gochi Hand', cursive;
 }
+
+.form-grid {
+    display: grid;
+    width: 100%;
+    grid-template-columns: repeat(4, auto) 1fr;
+    justify-content: start;
+    align-items: baseline;
+}
+
+.form-grid-item {
+    margin: 0 1rem;
+}
+
+input, select {
+    background: darkslateblue;
+    border: none;
+    border-bottom: 2px solid forestgreen;
+    font-size: 1.1rem;
+    font-family: 'Permanent Marker', cursive;
+}
+
+input:focus, select:focus {
+    background: darkslateblue;
+    border-bottom: 4px solid red;
+}
+
+.create-btn {
+    justify-self: 'end';
+    margin-left: auto;
+    margin-right: 1rem;
+    font-size: 1.5rem;
+    font-family: 'Permanent Marker', cursive;
+}
+
+.create-btn:disabled {
+    color: grey;
+}
