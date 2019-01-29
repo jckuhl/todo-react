@@ -38,6 +38,7 @@ export default class NewTodo extends Component {
                         type="text" id="newtodo" 
                         className="form-grid-item" 
                         onInput={this.setDisableFlag.bind(this)}
+                        maxLength="50"
                     />
                     <label htmlFor="priority" className="form-grid-item">Priority:</label>
                     <select id="priority" ref={this.state.priority} className="form-grid-item">

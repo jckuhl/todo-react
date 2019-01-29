@@ -6,3 +6,7 @@
     background-color: slateblue;
     border: 2px solid grey;
 }
+
+.app h3 {
+    text-align: center;
+}
