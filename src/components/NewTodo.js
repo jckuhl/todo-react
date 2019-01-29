@@ -7,6 +7,7 @@ export default class NewTodo extends Component {
     state = {
         newTodo: React.createRef(),
         priority: React.createRef(),
+        form: React.createRef(),
         invalid: true
     }
 
@@ -19,6 +20,8 @@ export default class NewTodo extends Component {
             id = Math.floor(Math.random() * 1000000);
         } while(this.props.ids.includes(id));
         this.props.addTodo(new Todo(task, priority, id));
+        this.state.form.reset();
+        this.setDisableFlag()
     }
 
     setDisableFlag() {
@@ -28,7 +31,7 @@ export default class NewTodo extends Component {
 
     render() {
         return (
-            <form onSubmit={this.addTodo.bind(this)}>
+            <form onSubmit={this.addTodo.bind(this)} ref={(el)=> this.state.form = el}>
                 <div className="form-grid">
                     <label htmlFor="newtodo" className="form-grid-item">New Todo:</label>
                     <input ref={this.state.newTodo} 
